@@ -2,10 +2,10 @@
 	"name": "Save Bandwidth",
 	"description": "Stops streaming video automatically from facebook pages except the video player itself",
 	"manifest_version": 2,
-	"version": "0.2",
+	"version": "1.0",
 	"background": {
 		"scripts": [
-			"js/background.min.js"
+			"background.js"
 		]
 	},
 	"content_scripts": [{
@@ -13,10 +13,14 @@
 			"*://*.facebook.com/*"
 		],
 		"js": [
-			"js/jquery.min.js", 
-			"js/content.min.js"
+			"jquery.min.js", 
+			"content.js"
 		]
 	}],
+	"permissions": [
+		"webRequest",
+		"*://*/"
+	],
 	"browser_action": {
 		"default_icon": "icon/save-bandwidth.png",
 		"default_title": "Bandwidth Saver"
